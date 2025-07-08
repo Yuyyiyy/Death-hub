@@ -1,6 +1,23 @@
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
+local HttpService = game:GetService("HttpService")
+
+-- 💀 Script Data Structure
+local buttonsPagesData = {
+    {Text = "AUTOGRAB BASE", ScriptLink = ""},
+    {Text = "INSTANT SPAWN", ScriptLink = ""},
+    {Text = "AUTO GRAB", ScriptLink = ""},
+    {Text = "SPT AUTOGRAB", ScriptLink = ""},
+    {Text = "USETOOLS", ScriptLink = ""},
+    {Text = "LOOPBRING", ScriptLink = ""},
+    {Text = "DAMAGE HITBOX", ScriptLink = ""},
+    {Text = "AURA", ScriptLink = ""},
+    {Text = "ANTI MOVEMENT", ScriptLink = ""},
+    {Text = "NO COOLDOWN", ScriptLink = ""},
+    {Text = "FEAR", ScriptLink = ""},
+    {Text = "FINAL DOOM", ScriptLink = ""}
+}
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
@@ -77,11 +94,11 @@ task.spawn(function()
     end
 end)
 
--- 🔥 Enhanced Toggle Button with Horror Effects
+-- 🔥 Enhanced Toggle Button with Horror Effects (Moved to top-right and made smaller)
 local toggleButton = Instance.new("ImageButton", screenGui)
 toggleButton.Name = "ReaperToggle"
-toggleButton.Size = UDim2.new(0, 100, 0, 100)
-toggleButton.Position = UDim2.new(0, 20, 0, 20)
+toggleButton.Size = UDim2.new(0, 50, 0, 50)  -- Made smaller from 70x70 to 50x50
+toggleButton.Position = UDim2.new(1, -70, 0, 20)  -- Moved to top-right corner, adjusted for smaller size
 toggleButton.BackgroundColor3 = Color3.fromRGB(5, 0, 0)
 toggleButton.BorderSizePixel = 0
 toggleButton.AutoButtonColor = false
@@ -115,12 +132,12 @@ gradientToggle.Rotation = 45
 
 -- 💀 Enhanced Center Icon with Animation
 local centerIcon = Instance.new("TextLabel", toggleButton)
-centerIcon.Size = UDim2.new(0, 60, 0, 60)
-centerIcon.Position = UDim2.new(0.5, -30, 0.5, -30)
+centerIcon.Size = UDim2.new(0, 30, 0, 30)  -- Adjusted for smaller button (from 40x40 to 30x30)
+centerIcon.Position = UDim2.new(0.5, -15, 0.5, -15)  -- Adjusted position for smaller size
 centerIcon.BackgroundTransparency = 1
 centerIcon.Text = "💀"
 centerIcon.Font = Enum.Font.Creepster
-centerIcon.TextSize = 30
+centerIcon.TextSize = 16  -- Smaller text size (from 20 to 16)
 centerIcon.TextColor3 = Color3.fromRGB(255, 0, 0)
 centerIcon.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 centerIcon.TextStrokeTransparency = 0.1
@@ -135,17 +152,17 @@ task.spawn(function()
     end
 end)
 
--- 🩸 Enhanced Toggle Label with Terror
+-- 🩸 Enhanced Toggle Label with Terror (Moved to right side and made smaller)
 local toggleLabel = Instance.new("TextLabel", screenGui)
-toggleLabel.Text = "🔴 ENTER THE VOID 🔴"
+toggleLabel.Text = "ENTER THE VOID"
 toggleLabel.Font = Enum.Font.Creepster
 toggleLabel.TextScaled = true
 toggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 toggleLabel.TextStrokeColor3 = Color3.fromRGB(200, 0, 0)
 toggleLabel.TextStrokeTransparency = 0.2
 toggleLabel.BackgroundTransparency = 1
-toggleLabel.Size = UDim2.new(0, 140, 0, 25)
-toggleLabel.Position = UDim2.new(0, 20, 0, 130)
+toggleLabel.Size = UDim2.new(0, 100, 0, 16)  -- Made smaller (from 120x20 to 100x16)
+toggleLabel.Position = UDim2.new(1, -120, 0, 80)  -- Positioned closer to toggle button
 toggleLabel.ZIndex = 10
 
 -- Flickering text effect
@@ -164,7 +181,7 @@ toggleButton.MouseButton1Click:Connect(function()
     main.Visible = isVisible
     mainFrame.Visible = isVisible
     bg.Visible = isVisible
-    toggleLabel.Text = isVisible and "🔴 CLOSE THE PORTAL 🔴" or "🔴 ENTER THE VOID 🔴"
+    toggleLabel.Text = isVisible and "CLOSE THE PORTAL" or "ENTER THE VOID"
     centerIcon.Text = isVisible and "💀" or "⚰️"
     
     -- Screen shake effect
@@ -185,7 +202,7 @@ titleContainer.BackgroundTransparency = 1
 titleContainer.ZIndex = 3
 
 local title = Instance.new("TextLabel", titleContainer)
-title.Text = "💀☠️ REAPER'S ETERNAL CURSE ☠️💀"
+title.Text = "REAPER'S ETERNAL CURSE"
 title.Font = Enum.Font.Creepster
 title.TextScaled = true
 title.TextColor3 = Color3.fromRGB(255, 0, 0)
@@ -198,7 +215,7 @@ title.ZIndex = 3
 
 -- Ghostly shadow effect
 local titleShadow = Instance.new("TextLabel", titleContainer)
-titleShadow.Text = "💀☠️ REAPER'S ETERNAL CURSE ☠️💀"
+titleShadow.Text = "REAPER'S ETERNAL CURSE"
 titleShadow.Font = Enum.Font.Creepster
 titleShadow.TextScaled = true
 titleShadow.TextColor3 = Color3.fromRGB(100, 0, 0)
@@ -223,9 +240,9 @@ task.spawn(function()
         
         -- Glitch effect
         if math.random() > 0.98 then
-            title.Text = "💀☠️ D̴E̴A̴T̴H̴ ̴A̴W̴A̴I̴T̴S̴ ☠️💀"
+            title.Text = "D̴E̴A̴T̴H̴ ̴A̴W̴A̴I̴T̴S̴"
             task.wait(0.1)
-            title.Text = "💀☠️ REAPER'S ETERNAL CURSE ☠️💀"
+            title.Text = "REAPER'S ETERNAL CURSE"
         end
         
         task.wait(0.05)
@@ -269,10 +286,33 @@ gridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 gridLayout.VerticalAlignment = Enum.VerticalAlignment.Top
 gridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
--- 💀 Enhanced Button Creation Function with More Terror
-local function createButton(name, layoutOrder, icon)
+-- 💀 Function to execute script from URL
+local function executeScript(scriptLink)
+    if scriptLink and scriptLink ~= "" then
+        local success, result = pcall(function()
+            local scriptContent = game:HttpGet(scriptLink)
+            if scriptContent then
+                local scriptFunction = loadstring(scriptContent)
+                if scriptFunction then
+                    scriptFunction()
+                    print("Script executed successfully from:", scriptLink)
+                else
+                    warn("Failed to load script from:", scriptLink)
+                end
+            end
+        end)
+        if not success then
+            warn("Error executing script:", result)
+        end
+    else
+        warn("No script link provided")
+    end
+end
+
+-- 💀 Enhanced Button Creation Function with Script Support
+local function createButton(buttonData, layoutOrder)
     local button = Instance.new("TextButton", buttonContainer)
-    button.Name = name
+    button.Name = buttonData.Text
     button.Size = UDim2.new(0.3, 0, 0.18, 0)
     button.BackgroundColor3 = Color3.fromRGB(8, 0, 0)
     button.BorderSizePixel = 0
@@ -307,34 +347,12 @@ local function createButton(name, layoutOrder, icon)
         end
     end)
     
-    -- Button icon with enhanced effects
-    local buttonIcon = Instance.new("TextLabel", button)
-    buttonIcon.Size = UDim2.new(0, 35, 0, 35)
-    buttonIcon.Position = UDim2.new(0.5, -17, 0.15, 0)
-    buttonIcon.BackgroundTransparency = 1
-    buttonIcon.Text = icon
-    buttonIcon.Font = Enum.Font.Creepster
-    buttonIcon.TextSize = 20
-    buttonIcon.TextColor3 = Color3.fromRGB(255, 50, 50)
-    buttonIcon.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-    buttonIcon.TextStrokeTransparency = 0.2
-    buttonIcon.ZIndex = 5
-    
-    -- Icon floating effect
-    task.spawn(function()
-        while true do
-            buttonIcon.Position = buttonIcon.Position + UDim2.new(0, 0, 0, math.sin(tick() * 2 + layoutOrder) * 0.5)
-            buttonIcon.Rotation = math.sin(tick() + layoutOrder) * 5
-            task.wait(0.05)
-        end
-    end)
-    
-    -- Button label with horror font
+    -- Button label with horror font (Clean text only)
     local buttonLabel = Instance.new("TextLabel", button)
-    buttonLabel.Size = UDim2.new(1, 0, 0.4, 0)
-    buttonLabel.Position = UDim2.new(0, 0, 0.6, 0)
+    buttonLabel.Size = UDim2.new(1, 0, 1, 0)
+    buttonLabel.Position = UDim2.new(0, 0, 0, 0)
     buttonLabel.BackgroundTransparency = 1
-    buttonLabel.Text = name
+    buttonLabel.Text = buttonData.Text
     buttonLabel.Font = Enum.Font.Creepster
     buttonLabel.TextScaled = true
     buttonLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -346,10 +364,6 @@ local function createButton(name, layoutOrder, icon)
     button.MouseEnter:Connect(function()
         TweenService:Create(button, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(30, 0, 0)}):Play()
         TweenService:Create(buttonStroke, TweenInfo.new(0.2), {Transparency = 0.05, Thickness = 3}):Play()
-        TweenService:Create(buttonIcon, TweenInfo.new(0.2), {
-            TextColor3 = Color3.fromRGB(255, 100, 100),
-            TextSize = 25
-        }):Play()
         TweenService:Create(buttonLabel, TweenInfo.new(0.2), {
             TextColor3 = Color3.fromRGB(255, 150, 150)
         }):Play()
@@ -358,16 +372,12 @@ local function createButton(name, layoutOrder, icon)
     button.MouseLeave:Connect(function()
         TweenService:Create(button, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(8, 0, 0)}):Play()
         TweenService:Create(buttonStroke, TweenInfo.new(0.2), {Transparency = 0.2, Thickness = 2}):Play()
-        TweenService:Create(buttonIcon, TweenInfo.new(0.2), {
-            TextColor3 = Color3.fromRGB(255, 50, 50),
-            TextSize = 20
-        }):Play()
         TweenService:Create(buttonLabel, TweenInfo.new(0.2), {
             TextColor3 = Color3.fromRGB(255, 255, 255)
         }):Play()
     end)
     
-    -- Enhanced button click effect
+    -- Enhanced button click effect with script execution
     button.MouseButton1Click:Connect(function()
         TweenService:Create(button, TweenInfo.new(0.1), {Size = UDim2.new(0.28, 0, 0.16, 0)}):Play()
         
@@ -383,33 +393,19 @@ local function createButton(name, layoutOrder, icon)
         task.wait(0.1)
         TweenService:Create(button, TweenInfo.new(0.1), {Size = UDim2.new(0.3, 0, 0.18, 0)}):Play()
         
+        -- Execute the script from ScriptLink
+        executeScript(buttonData.ScriptLink)
+        
         task.wait(0.3)
         flash:Destroy()
-        
-        print("Button clicked:", name)
     end)
     
     return button
 end
 
--- 💀 Create 12 Enhanced Terror Buttons
-local buttonData = {
-    {name = "AUTOGRAB BASE", icon = "👻"},
-    {name = "INSTANT SPAWN", icon = "🩸"},
-    {name = "AUTO GRAB", icon = "💀"},
-    {name = "SPT AUTOGRAB", icon = "🌑"},
-    {name = "USETOOLS", icon = "⚡"},
-    {name = "LOOPBRING", icon = "https://pastebin.com/raw/ZcFLx8XA"},
-    {name = "DAMAGE HITBOX", icon = "🔮"},
-    {name = "AURA", icon = "🦴"},
-    {name = "ANTI MOVEMENT", icon = "🔥"},
-    {name = "NO COOLDOWN", icon = "🕳️"},
-    {name = "FEAR", icon = "👺"},
-    {name = "FINAL DOOM", icon = "☠️"}
-}
-
-for i, data in ipairs(buttonData) do
-    createButton(data.name, i, data.icon)
+-- 💀 Create Buttons from buttonsPagesData
+for i, buttonData in ipairs(buttonsPagesData) do
+    createButton(buttonData, i)
 end
 
 -- 💀 Enhanced Floating DEATH Labels with More Terror
