@@ -11,12 +11,12 @@ local buttonsPagesData = {
     {Text = "SPT AUTOGRAB", ScriptLink = "https://pastebin.com/raw/MHN7tVU8"},
     {Text = "USETOOLS", ScriptLink = ""},
     {Text = "LOOPBRING", ScriptLink = ""},
-    {Text = "DAMAGE HITBOX", ScriptLink = ""},
+    {Text = "DAMAGE HITBOX", ScriptLink = "https://pastebin.com/raw/n0mr4ri6"},
     {Text = "AURA", ScriptLink = "https://pastebin.com/raw/qZPVbxFc"},
     {Text = "ANTI MOVEMENT", ScriptLink = ""},
     {Text = "NO COOLDOWN", ScriptLink = ""},
     {Text = "LAG SERVER", ScriptLink = "https://gist.githubusercontent.com/Yuyyiyy/6f38723afc3d835dc1f8bc96b9f61bd8/raw/9d7b2525de18a7f1220d5c78fcfdf34b7da5e05f"},
-    {Text = "FPS", ScriptLink = ""}
+    {Text = "FPS", ScriptLink = "https://pastebin.com/raw/TJTb4nmD"}
 }
 
 local player = Players.LocalPlayer
