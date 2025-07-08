@@ -399,7 +399,7 @@ local buttonData = {
     {name = "AUTO GRAB", icon = "💀"},
     {name = "SPT AUTOGRAB", icon = "🌑"},
     {name = "USETOOLS", icon = "⚡"},
-    {name = "LOOPBRING", icon = "⚰️"},
+    {name = "LOOPBRING", icon = "https://pastebin.com/raw/ZcFLx8XA"},
     {name = "DAMAGE HITBOX", icon = "🔮"},
     {name = "AURA", icon = "🦴"},
     {name = "ANTI MOVEMENT", icon = "🔥"},
