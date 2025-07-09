@@ -65,7 +65,74 @@ local mainFrame = Instance.new("Frame", screenGui)
 mainFrame.Size = UDim2.new(0.6, 0, 0.6, 0)
 mainFrame.Position = UDim2.new(0.2, 0, 0.2, 0)
 mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-mainFrame.BorderSizePixel = 0
+mainFrame.BorderSizePixellocal Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local HttpService = game:GetService("HttpService")
+
+-- 💀 Script Data Structure
+local buttonsPagesData = {
+    {Text = "AUTOGRAB BASE", ScriptLink = "https://pastefy.app/kS9BglBQ/raw"},
+    {Text = "INSTANT SPAWN", ScriptLink = "https://pastebin.com/raw/GM8KTmjZ"},
+    {Text = "AUTO GRAB", ScriptLink = "https://gist.githubusercontent.com/Yuyyiyy/eb3b21915928414653a2b8dd9a40980e/raw/782a51c0004924e47d86c0c008acd280e5af16c3"},
+    {Text = "SPT AUTOGRAB", ScriptLink = "https://pastebin.com/raw/MHN7tVU8"},
+    {Text = "USETOOLS", ScriptLink = "https://pastebin.com/raw/HQdjVm7g"},
+    {Text = "LOOPBRING", ScriptLink = "https://pastebin.com/raw/fsK76uNm"},
+    {Text = "DAMAGE HITBOX", ScriptLink = "https://pastebin.com/raw/n4Qxm4jF"},
+    {Text = "AURA", ScriptLink = "https://pastebin.com/raw/qZPVbxFc"},
+    {Text = "ANTI MOVEMENT", ScriptLink = "https://pastebin.com/raw/1Ms8UVsR"},
+    {Text = "NO COOLDOWN", ScriptLink = "https://pastebin.com/raw/WzdzWTZd"},
+    {Text = "LAG SERVER", ScriptLink = "https://gist.githubusercontent.com/Yuyyiyy/6f38723afc3d835dc1f8bc96b9f61bd8/raw/9d7b2525de18a7f1220d5c78fcfdf34b7da5e05f"},
+    {Text = "FPS", ScriptLink = "https://pastebin.com/raw/TJTb4nmD"}
+}
+
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui", playerGui)
+screenGui.Name = "ReapersTollCombinedUI"
+screenGui.ResetOnSpawn = false
+screenGui.IgnoreGuiInset = true
+
+-- 🌑 Enhanced Horror Background
+local bg = Instance.new("Frame", screenGui)
+bg.Size = UDim2.new(1, 0, 1, 0)
+bg.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+bg.ZIndex = 0
+
+local gradient = Instance.new("UIGradient", bg)
+gradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(10, 0, 0)),
+    ColorSequenceKeypoint.new(0.3, Color3.fromRGB(35, 0, 0)),
+    ColorSequenceKeypoint.new(0.6, Color3.fromRGB(5, 0, 0)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(20, 0, 0))
+}
+gradient.Transparency = NumberSequence.new{
+    NumberSequenceKeypoint.new(0, 0.05),
+    NumberSequenceKeypoint.new(0.5, 0.2),
+    NumberSequenceKeypoint.new(1, 0.1)
+}
+
+-- Pulsing horror effect
+task.spawn(function()
+    while true do
+        gradient.Rotation += 2
+        local pulse = math.sin(tick() * 3) * 0.1
+        gradient.Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05 + pulse),
+            NumberSequenceKeypoint.new(0.5, 0.2 + pulse),
+            NumberSequenceKeypoint.new(1, 0.1 + pulse)
+        }
+        task.wait(0.02)
+    end
+end)
+
+-- 🎮 Main Frames
+local mainFrame = Instance.new("Frame", screenGui)
+mainFrame.Size = UDim2.new(0.6, 0, 0.6, 0)
+mainFrame.Position = UDim2.new(0.2, 0, 0.2, 0)
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ = 0
 mainFrame.Visible = false
 
 local main = Instance.new("Frame", screenGui)
