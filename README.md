@@ -2,7 +2,6 @@ local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local HttpService = game:GetService("HttpService")
-
 -- 💀 Script Data Structure
 local buttonsPagesData = {
     {Text = "AUTOGRAB BASE", ScriptLink = "https://pastefy.app/kS9BglBQ/raw"},
