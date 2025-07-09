@@ -609,7 +609,7 @@ task.spawn(function()
         whisper.BackgroundTransparency = 1
         whisper.Size = UDim2.new(0, 200, 0, 20)
         whisper.Position = UDim2.new(math.random(), 0, math.random(), 0)
-        whisper.ZIndex = 1
+        whisper.ZIndex = 1 
         whisper.Parent = bg
         
         TweenService:Create(whisper, TweenInfo.new(3), {
