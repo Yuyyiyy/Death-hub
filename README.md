@@ -11,7 +11,7 @@ local buttonsPagesData = {
     {Text = "SPT AUTOGRAB", ScriptLink = "https://pastebin.com/raw/MHN7tVU8"},
     {Text = "USETOOLS", ScriptLink = "https://pastebin.com/raw/HQdjVm7g"},
     {Text = "LOOPBRING", ScriptLink = "https://pastebin.com/raw/adZmqdcy"},
-    {Text = "DAMAGE HITBOX", ScriptLink = "https://pastebin.com/raw/n0mr4ri6"},
+    {Text = "DAMAGE HITBOX", ScriptLink = "https://pastebin.com/raw/n4Qxm4jF"},
     {Text = "AURA", ScriptLink = "https://pastebin.com/raw/qZPVbxFc"},
     {Text = "ANTI MOVEMENT", ScriptLink = "https://pastebin.com/raw/JXti1EHH"},
     {Text = "NO COOLDOWN", ScriptLink = "https://pastebin.com/raw/WzdzWTZd"},
